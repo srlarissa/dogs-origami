@@ -32,6 +32,10 @@ button, input{
     color: #333;
 }
 
+a{
+    text-decoration: none;
+}
+
 .container{
     max-width: 800px;
     padding: 0 16px;
