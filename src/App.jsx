@@ -1,13 +1,14 @@
-import { Header } from './Components/Header';
-import { Footer } from './Components/Footer';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthRoutes } from './routes/authroutes';
 
 function App() {
   return (
    <div>
     <BrowserRouter>
       <Header />
-      <p>Página inicial</p>
+      <AuthRoutes />
       <Footer />
     </BrowserRouter>
    </div>
