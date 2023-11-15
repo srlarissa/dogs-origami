@@ -3,7 +3,7 @@ import { Button } from '../../../Form/Button';
 import useForm from '../../../../hooks/useForm'
 
 export function LoginForm(){
-    const userName = useForm();
+    const userName = useForm('email');
     const password = useForm();
 
     function handleSubmit(event){
