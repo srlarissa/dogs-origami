@@ -12,6 +12,7 @@ const useForm = (type) => {
     const [error, setError] = useState(null);
 
     function onChange({target}){
+        if(error) validate(target.value);
         setValue(target.value)
     };
 
@@ -26,8 +27,7 @@ const useForm = (type) => {
         }else{
             setError(null);
             return true;
-        }
-      
+        } 
     }
     return{
         value,
