@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { Input } from '../../../Form/Input'
-import { Button } from '../../../Form/Button'
+import { Input } from '../../../Form/Input';
+import { Button } from '../../../Form/Button';
+import useForm from '../../../../hooks/useForm'
 
 export function LoginForm(){
-    const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+    const userName = useForm();
+    const password = useForm();
 
     function handleSubmit(event){
         event.preventDefault();
@@ -14,14 +14,12 @@ export function LoginForm(){
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                userName,
-                password
+               
             })
         }).then(response => {
-            console.log(response);
-            return response.json();
+            return response.json()
         }).then(json => {
-            console.log(json);
+            console.log(json)
         })
     }
 
@@ -29,8 +27,8 @@ export function LoginForm(){
         <section>
             <h1>Login</h1>
             <form action="" onSubmit={handleSubmit}>
-                <Input label="Usuário" name="userName" type="text" />
-                <Input label="Senha" name="password" type="password" />
+                <Input label="Usuário" name="userName" type="text" {...userName} />
+                <Input label="Senha" name="password" type="password" {...password} />
                 <Button>Entrar</Button>
             </form>
         </section>
